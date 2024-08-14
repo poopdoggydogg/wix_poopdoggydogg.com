@@ -1,0 +1,46 @@
+//email.jsw
+
+import {sendWithService} from 'backend/sendGrid_v2';
+
+export function sendEmail(subject, body) {
+ const key = "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";
+ const sender = "poopdoggydogg@gmail.com";
+ const recipient = "beowulf007@gmail.com";
+ return sendWithService(key, sender, recipient, subject, body);
+}
+
+export function sendEmailWithRecipient(subject, body, recipient) {
+ const key = "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";
+ const sender = "poopdoggydogg@gmail.com";
+
+ console.log(`RECIPIENT inside email.jsw: ${recipient}`);
+ //recipient = "beowulf007@gmail.com";
+ //subject = "this is subject";
+ //body = "this is body";
+ return sendWithService(key, sender, recipient, subject, body);
+}
+
+
+/*
+	file = email.jsw
+	author = james bui
+	date = 07.14.2021
+*/
+
+//API KEY NAME = divotzEmail_01
+//value = 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
+/*
+console.log("----------start email.js");
+
+import {sendWithService} from 'backend/sendGrid';
+
+export function sendEmail(subject, body) {
+  const key = "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";
+  const sender = "poopdoggydogg@gmail.com";
+  const recipient = "beowulf007@gmail.com";
+  let subject = "subject value";
+  let body = "body value";
+  return sendWithService(key, sender, recipient, subject, body);
+}
+console.log("----------end email.js");
+*/

@@ -1,0 +1,11 @@
+// .jsw files enable you to write functions that run on the server side
+// Test any backend function by clicking the "Play" button on the left side of the code panel
+// About testing backend functions: https://support.wix.com/en/article/velo-testing-your-backend-functions
+
+import {sendInstruction} from 'backend/sendGrid_v3';
+
+export function sendEmail(subject, body, Recipient, testInfo) {
+  const APIkey = "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";
+  const sender = "poopdoggydogg@gmail.com";
+  return sendInstruction(APIkey, sender, Recipient, subject, body, testInfo);
+}
